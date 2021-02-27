@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 public class SortingArraysTest extends TestCase {
 
 	SortingArrays sorter;
-	int arr1[], arr2[], arr3[], arr4[], arr5[], arr6[];
+	int arr1[], arr2[], arr3[], arr4[], arr5[], arr6[], arr7[];
 
 	public void setUp() {
 
@@ -17,6 +17,8 @@ public class SortingArraysTest extends TestCase {
 		arr4 = new int[] { 3, 3, 4, 5, 5, 6, 7, 4, 8, 0 };
 		arr5 = new int[] { 0 };
 		arr6 = null;
+		arr7 = new int[50];
+		
 		
 
 	}
@@ -35,6 +37,15 @@ public class SortingArraysTest extends TestCase {
 				}
 			} else
 				first = false;
+		}
+	}
+	
+	public void createArray() {
+		
+		int random;
+		for(int i = 0; i < 50; i++) {
+			random = (int)(Math.random()*100)+1;
+			arr7[i] = random;
 		}
 	}
 
@@ -68,6 +79,11 @@ public class SortingArraysTest extends TestCase {
 		int arr[] = sorter.bubbleSort(arr5);
 		assertEquals(arr5, arr);
 	}
+	
+	public void test06() {
+		int arr[] = sorter.bubbleSort(arr7);
+		testIsSorted(arr);
+	}
 
 	// Tests QuickSort
 	public void test20() {
@@ -100,105 +116,125 @@ public class SortingArraysTest extends TestCase {
 		assertNull(arr);
 	}
 	
+	public void test26() {
+		int arr[] = sorter.quickSort(arr7);
+		testIsSorted(arr);
+	}
+	
 
 	// Tests MergeSort
-	public void test30() {
+	public void test40() {
 		int arr[] = sorter.mergeSort(arr1);
 		testIsSorted(arr);
 	}
 	
-	public void test31() {
+	public void test41() {
 		int arr[] = sorter.mergeSort(arr2);
 		testIsSorted(arr);
 	}
 	
-	public void test32() {
+	public void test42() {
 		int arr[] = sorter.mergeSort(arr3);
 		testIsSorted(arr);
 	}
 	
-	public void test33() {
+	public void test43() {
 		int arr[] = sorter.mergeSort(arr4);
 		testIsSorted(arr);
 	}
 	
-	public void test34() {
+	public void test44() {
 		int arr[] = sorter.mergeSort(arr5);
 		testIsSorted(arr);
 	}
 	
-	public void test35() {
+	public void test45() {
 		int arr[] = sorter.mergeSort(arr6);
 		assertNull(arr);
 	}
+	
+	public void test46() {
+		int arr[] = sorter.mergeSort(arr7);
+		testIsSorted(arr);
+	}
 
 	// Tests InsertionSort
-	public void test40() {
+	public void test60() {
 		int arr[] = sorter.insertionSort(arr1);
 		testIsSorted(arr);
 	}
 	
-	public void test41() {
+	public void test61() {
 		int arr[] = sorter.insertionSort(arr2);
 		testIsSorted(arr);
 	}
 	
-	public void test42() {
+	public void test62() {
 		int arr[] = sorter.insertionSort(arr3);
 		testIsSorted(arr);
 	}
 	
-	public void test43() {
+	public void test63() {
 		int arr[] = sorter.insertionSort(arr4);
 		testIsSorted(arr);
 	}
 	
-	public void test44() {
+	public void test64() {
 		int arr[] = sorter.insertionSort(arr5);
 		testIsSorted(arr);
 	}
 	
-	public void test45() {
+	public void test65() {
 		int arr[] = sorter.insertionSort(arr6);
 		assertNull(arr);
 	}
+	
+	public void test66() {
+		int arr[] = sorter.insertionSort(arr7);
+		testIsSorted(arr);
+	}
 
 	// Tests SelectionSort
-	public void test50() {
+	public void test80() {
 		int arr[] = sorter.selectionSort(arr1);
 		testIsSorted(arr);
 	}
 	
-	public void test51() {
+	public void test81() {
 		int arr[] = sorter.selectionSort(arr2);
 		testIsSorted(arr);
 	}
 	
-	public void test52() {
+	public void test82() {
 		int arr[] = sorter.selectionSort(arr3);
 		testIsSorted(arr);
 	}
 	
-	public void test53() {
+	public void test83() {
 		int arr[] = sorter.selectionSort(arr4);
 		testIsSorted(arr);
 	}
 	
-	public void test54() {
+	public void test84() {
 		int arr[] = sorter.selectionSort(arr5);
 		testIsSorted(arr);
 	}
 	
-	public void test55() {
+	public void test85() {
 		int arr[] = sorter.selectionSort(arr6);
 		assertNull(arr);
+	}
+	
+	public void test86() {
+		int arr[] = sorter.selectionSort(arr7);
+		testIsSorted(arr);
 	}
 	
 
 	// Tests HeapSort
 	public void testHeapSort() {
 		//need a different kind of test for heap sort
-			//testIsSorted will not work on heapsort because of how priority works
+			//testIsSorted will not work on heap sort because of how priority works
 	}
 
 	// Tests BucketSort
