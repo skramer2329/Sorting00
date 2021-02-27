@@ -16,6 +16,7 @@ public class SortingTests extends TestCase{
 		arr3 = new int[] {-1, -2, -4, -5, 7, 4, 2, 0, 3};
 		arr4 = new int[] {3, 3, 4, 5, 5, 6, 7, 4, 8, 0};
 		arr5 = new int[] {};
+		arr6 = new int[10];
 		
 	}
 	
@@ -26,6 +27,9 @@ public class SortingTests extends TestCase{
 	
 	//create some arrays using a loop
 	public void test02() {
+		for(int i =0; i<arr6.length; i++) {
+			arr6[i] = i;
+		}
 		
 	}
 	

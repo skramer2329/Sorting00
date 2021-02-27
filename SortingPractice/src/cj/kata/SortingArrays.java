@@ -19,7 +19,45 @@ public class SortingArrays {
 	
 	//Data Structures to work with
 		//Arrays, Linked Lists, BST
+	public int[] bubbleSort(int[] arrToSort) {
+		
+		return null;
+	}
 	
+	public int[] quickSort(int[] arrToSort) {
+		
+		return null;
+	}
+	
+	public int[] mergeSort(int[] arrToSort) {
+		
+		return null;
+	}
+	
+	public int[] insertionSort(int[] arrToSort) {
+		
+		return null;
+	}
+	
+	public int[] selectionSort(int[] arrToSort) {
+		
+		return null;
+	}
+	
+	public int[] heapSort(int[] arrToSort) {
+		
+		return null;
+	}
+	
+	public int[] bucketSort(int[] arrToSort) {
+		
+		return null;
+	}
+	
+	public int[] radixSort(int[] arrToSort) {
+		
+		return null;
+	}
 	
 	//Other Projects I want to work on (will make separate note later)
 		//Queue, Stack, Heap, Lists, Iterators 
