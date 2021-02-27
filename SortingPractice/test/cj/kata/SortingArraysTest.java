@@ -31,42 +31,70 @@ public class SortingArraysTest extends TestCase {
 				if (!condition) {
 					assertTrue(condition);
 				}
-			}else first = false;
+			} else
+				first = false;
 		}
 	}
 
-	//Tests BubbleSort
+	// Tests BubbleSort
 	public void testBubbleSort() {
 		int arr[] = sorter.bubbleSort(arr5);
 		assertNull(arr);
 	}
+
+	public void test01() {
+		int arr[] = sorter.bubbleSort(arr1);
+		testIsSorted(arr);
+	}
+
+	public void test02() {
+		int arr[] = sorter.bubbleSort(arr2);
+		testIsSorted(arr);
+	}
+
+	public void test03() {
+		int arr[] = sorter.bubbleSort(arr3);
+		testIsSorted(arr);
+	}
+
+	public void test04() {
+		int arr[] = sorter.bubbleSort(arr4);
+		testIsSorted(arr);
+	}
+
 	
-	//Tests QuickSort
+
+	// Tests QuickSort
 	public void testQuickSort() {
 
 	}
-	
-	//Tests MergeSort
+
+	// Tests MergeSort
 	public void testMergeSort() {
 
 	}
 
+	// Tests InsertionSort
 	public void testInsertionSort() {
 
 	}
 
+	// Tests SelectionSort
 	public void testSelectionSort() {
 
 	}
 
+	// Tests HeapSort
 	public void testHeapSort() {
 
 	}
 
+	// Tests BucketSort
 	public void testBucketSort() {
 
 	}
 
+	// Tests RadixSort
 	public void testRadixSort() {
 
 	}
