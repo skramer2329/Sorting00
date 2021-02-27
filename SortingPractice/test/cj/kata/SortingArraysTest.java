@@ -16,6 +16,7 @@ public class SortingArraysTest extends TestCase {
 		arr3 = new int[] { -1, -2, -4, -5, 7, 4, 2, 0, 3 };
 		arr4 = new int[] { 3, 3, 4, 5, 5, 6, 7, 4, 8, 0 };
 		arr5 = null;
+		arr6 = new int[] { 0 };
 
 	}
 
@@ -61,8 +62,11 @@ public class SortingArraysTest extends TestCase {
 		int arr[] = sorter.bubbleSort(arr4);
 		testIsSorted(arr);
 	}
-
 	
+	public void test05() {
+		int arr[] = sorter.bubbleSort(arr6);
+		assertEquals(arr6, arr);
+	}
 
 	// Tests QuickSort
 	public void testQuickSort() {
