@@ -33,9 +33,9 @@ public class SortingArrays {
 		//maybe I can use partition-1 as the length comparison
 		if (arrToSort == null)
 			return null;
-		int partition = arrToSort.length;
+		int partition = arrToSort.length-1;
 		while (partition != 0) {
-			for (int i = 0, j = i + 1; i < arrToSort.length-1; i++) {
+			for (int i = 0, j = i + 1; i < partition; i++) {
 				if (arrToSort[i] > arrToSort[j])
 					swap(arrToSort, i, j);
 
