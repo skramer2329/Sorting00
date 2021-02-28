@@ -54,7 +54,7 @@ public class SortingArrays {
 	
 	
 	//helper method for quickSort:
-	public int getPivot(int firstIndex, int lastIndex) {
+	public int getRandomPivot(int firstIndex, int lastIndex) {
 		
 		int randomPivot = (int)(Math.random()*lastIndex) +1;
 		return randomPivot;
@@ -65,13 +65,21 @@ public class SortingArrays {
 		
 	}
 	
+	//Divide and conquer; Worse case: O(n^2); Best Case: O(n log n)
 	public int[] quickSort(int[] arrToSort) {
 
 		if(arrToSort == null) return null;
 		
-		//pivot, smaller than pivot will be to left, greater will be to right
-		//choosing a random
-		int pivot = getPivot(0, arrToSort.length);
+		//gets random pivot
+		int pivot = getRandomPivot(0, arrToSort.length);
+		
+		//places value of pivot at last index
+		swap(arrToSort, arrToSort.length, pivot);
+		
+		//set index of pivot to last index
+		pivot = arrToSort.length;
+		
+		
 		
 		return arrToSort;
 	}
