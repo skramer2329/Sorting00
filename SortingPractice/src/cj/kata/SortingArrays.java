@@ -18,11 +18,35 @@ public class SortingArrays {
 	
 	
 	//Data Structures to work with
-		//Arrays, Linked Lists, BST
+		//Arrays, Linked Lists, BST, heap
 	
+	public void swap(int[] arr, int indexA, int indexB) {
+		
+		int tmp = arr[indexA];
+		arr[indexA] = arr[indexB];
+		arr[indexB] = tmp;
+		
+	}
+	
+	
+	//Big O analysis: O(n^2) because it uses nested loops
 	public int[] bubbleSort(int[] arrToSort) {
 		
-		return null;
+		if(arrToSort == null) return null;
+		
+		for(int i=0; i<arrToSort.length-1; i++) {
+			for(int j = i+1; j < arrToSort.length-1; i++) {
+				if(arrToSort[i] > arrToSort[j])
+					swap(arrToSort, i, j);
+			}
+		}
+			
+			
+			
+		
+		
+		
+		return arrToSort;
 	}
 	
 	public int[] quickSort(int[] arrToSort) {
