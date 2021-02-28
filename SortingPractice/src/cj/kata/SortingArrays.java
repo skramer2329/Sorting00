@@ -19,6 +19,10 @@ public class SortingArrays {
 
 	// Data Structures to work with
 	// Arrays, Linked Lists, BST, heap
+	
+	/*
+	 * TODO: add wellformed method to test data structure if necessary
+	 */
 
 	public void swap(int[] arr, int indexA, int indexB) {
 
@@ -47,40 +51,65 @@ public class SortingArrays {
 
 		return arrToSort;
 	}
-
+	
+	
+	//helper method for quickSort:
+	public int getPivot(int firstIndex, int lastIndex) {
+		
+		int randomPivot = (int)(Math.random()*lastIndex) +1;
+		return randomPivot;
+	}
+	
+	//helper method for quicksort:
+	public void partition() {
+		
+	}
+	
 	public int[] quickSort(int[] arrToSort) {
 
-		return null;
+		if(arrToSort == null) return null;
+		
+		//pivot, smaller than pivot will be to left, greater will be to right
+		//choosing a random
+		int pivot = getPivot(0, arrToSort.length);
+		
+		return arrToSort;
 	}
 
 	public int[] mergeSort(int[] arrToSort) {
-
-		return null;
+		if(arrToSort == null) return null;
+		
+		return arrToSort;
 	}
 
 	public int[] insertionSort(int[] arrToSort) {
-
-		return null;
+		if(arrToSort == null) return null;
+		
+		return arrToSort;
 	}
 
 	public int[] selectionSort(int[] arrToSort) {
-
-		return null;
+		if(arrToSort == null) return null;
+		
+		return arrToSort;
 	}
 
 	public int[] heapSort(int[] arrToSort) {
-
-		return null;
+		if(arrToSort == null) return null;
+		
+		return arrToSort;
 	}
 
 	public int[] bucketSort(int[] arrToSort) {
-
-		return null;
+		if(arrToSort == null) return null;
+		
+		return arrToSort;
 	}
 
 	public int[] radixSort(int[] arrToSort) {
-
-		return null;
+		if(arrToSort == null) return null;
+		
+		return arrToSort;
 	}
 
 	// Other Projects I want to work on (will make separate note later)
