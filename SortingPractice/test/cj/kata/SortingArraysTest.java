@@ -14,7 +14,7 @@ public class SortingArraysTest extends TestCase {
 		arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 		arr2 = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 		arr3 = new int[] { -1, -2, -4, -5, 7, 4, 2, 0, 3 };
-		arr4 = new int[] { 3, 3, 4, 5, 5, 6, 7, 4, 8, 0 };
+		arr4 = new int[] { 3, 10, 4, 11, 5, 6, 7, 13, 8, 0 };
 		arr5 = new int[] { 0 };
 		arr6 = null;
 		arr7 = new int[50];
@@ -40,12 +40,10 @@ public class SortingArraysTest extends TestCase {
 		}
 	}
 	
-	public void createArray() {
+	public void createArray(int[] arr) {
 		
-		int random;
 		for(int i = 0; i < 50; i++) {
-			random = (int)(Math.random()*100)+1;
-			arr7[i] = random;
+			arr7[i] = i+1;
 		}
 	}
 
@@ -81,6 +79,7 @@ public class SortingArraysTest extends TestCase {
 	}
 	
 	public void test06() {
+		createArray(arr7);
 		int arr[] = sorter.bubbleSort(arr7);
 		testIsSorted(arr);
 	}
