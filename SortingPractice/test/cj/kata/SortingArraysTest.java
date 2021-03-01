@@ -86,37 +86,37 @@ public class SortingArraysTest extends TestCase {
 
 	// Tests QuickSort
 	public void test20() {
-		int arr[] = sorter.quickSort(arr1);
+		int arr[] = sorter.quickSort(arr1, 0, arr1.length);
 		testIsSorted(arr);
 	}
 	
 	public void test21() {
-		int arr[] = sorter.quickSort(arr2);
+		int arr[] = sorter.quickSort(arr2, 0, arr2.length);
 		testIsSorted(arr);
 	}
 	
 	public void test22() {
-		int arr[] = sorter.quickSort(arr3);
+		int arr[] = sorter.quickSort(arr3, 0, arr3.length);
 		testIsSorted(arr);
 	}
 	
 	public void test23() {
-		int arr[] = sorter.quickSort(arr4);
+		int arr[] = sorter.quickSort(arr4, 0, arr6.length);
 		testIsSorted(arr);
 	}
 	
 	public void test24() {
-		int arr[] = sorter.quickSort(arr5);
+		int arr[] = sorter.quickSort(arr5, 0, arr5.length);
 		testIsSorted(arr);
 	}
 	
 	public void test25() {
-		int arr[] = sorter.quickSort(arr6);
+		int arr[] = sorter.quickSort(arr6, -1, -1);
 		assertNull(arr);
 	}
 	
 	public void test26() {
-		int arr[] = sorter.quickSort(arr7);
+		int arr[] = sorter.quickSort(arr7, 0, arr7.length);
 		testIsSorted(arr);
 	}
 	
