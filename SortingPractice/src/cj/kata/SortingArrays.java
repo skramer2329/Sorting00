@@ -61,8 +61,9 @@ public class SortingArrays {
 	}
 	
 	//helper method for quicksort:
-	public void partition() {
+	public int partition(int[] arr) {
 		
+		return -1;
 	}
 	
 	//Divide and conquer; Worse case: O(n^2); Best Case: O(n log n)
@@ -73,30 +74,27 @@ public class SortingArrays {
 		//Base case:
 		if(arrToSort.length == 1) return arrToSort;
 		
-		//gets random pivot
+		//gets random index for pivot
 		int pivot = getRandomPivot(0, arrToSort.length-1);
 		
-		//places value of pivot at last index
+		//places value of pivot at last index; not sure if this is totally necessary tbh. Seems to make sorting easier
 		swap(arrToSort, arrToSort.length-1, pivot);
 		
 		//set index of pivot to last index
 		pivot = arrToSort.length-1;
 		
-		//need to figure out how to partition the method. Should probably use a partition helper method here
+		//pivot is now in it's correct place
+		int pivotCorrect = partition(arrToSort);
 		
-		//Lets say we have a partition method...
+		//Lets say we have a partition method... that works
 		//What would it return? What if it returned the int index of pivot (in its right place)
 			//then I could find the left and right partition
 			
+		//left partition:
+		quickSort(arrToSort, 0, pivotCorrect-1);
 		
-		
-		
-		//need to call quicksort on both the left partition and the right partition
-			//if I need to call quicksort on a partition, then quicksort needs two indexes
-			//for now lets say that the pivot is somewhere in the middle and there is a right
-			//and left partition
-			//if it is recursive, what is the base case? Probably not null. Most likely if the length is 1,
-			//then it is sorted.
+		//right partition:
+		quickSort(arrToSort, pivotCorrect+1, arrToSort.length-1);
 		
 		return arrToSort;
 	}
