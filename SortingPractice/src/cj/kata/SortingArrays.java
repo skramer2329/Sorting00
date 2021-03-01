@@ -66,24 +66,31 @@ public class SortingArrays {
 		int pivot = endIndex;
 		int i, j;
 
-		for (i = startIndex, j = endIndex - 1; i != j;) {
-			//if starting index is < pivot then i++
-			if(arr[i] < arr[pivot])
+		for (i = startIndex, j = endIndex - 1; i < j;) {
+
+			while (arr[i] < arr[pivot])
 				i++;
-			//if end index > pivot j--
-			if(arr[j] > arr[pivot])
+			
+			while (arr[j] > arr[pivot])
 				j--;
-			//else swap values
-			else
-				swap(arr, i, j);
+			// else swap values
+//			if (arr[i] > arr[pivot] && arr[j] < arr[pivot]) {
+//				swap(arr, i, j);
+//				++i;
+//				--j;
+//			}
+			swap(arr, i, pivot);
+			pivot = i;
+			
 		}
 
 		// after this for loop finishes, i should be equal to j
 		// then we swap the lower index with the pivot
-		swap(arr, startIndex, pivot);
-		
-		//will the actual pivot return? we only swapped values in swap method, we didn't swap the indexes.
-		pivot = startIndex;
+		//swap(arr, startIndex, pivot);
+
+		// will the actual pivot return? we only swapped values in swap method, we
+		// didn't swap the indexes.
+		//pivot = startIndex;
 		return pivot;
 	}
 
@@ -112,19 +119,12 @@ public class SortingArrays {
 		// pivot is now in it's correct place after calling partition
 		int pivotCorrect = partition(arrToSort, 0, pivot);
 
-		// Lets say we have a partition method... that works
-		// What would it return? What if it returned the int index of pivot (in its
-		// right place)
-		// then I could find the left and right partition
-		// the partition probably needs an index too. We can't just keep passing the
-		// whole array to the
-		// partition, the same pivot will keep getting returned.....
 
 		// left partition:
-		quickSort(arrToSort, 0, pivotCorrect - 1);
+		//quickSort(arrToSort, 0, pivotCorrect - 1);
 
 		// right partition:
-		quickSort(arrToSort, pivotCorrect + 1, arrToSort.length - 1);
+		//quickSort(arrToSort, pivotCorrect + 1, arrToSort.length - 1);
 
 		return arrToSort;
 	}
