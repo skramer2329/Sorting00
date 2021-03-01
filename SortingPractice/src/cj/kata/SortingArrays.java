@@ -79,7 +79,14 @@ public class SortingArrays {
 		//set index of pivot to last index
 		pivot = arrToSort.length;
 		
-		
+		for(int i = 0, j = arrToSort.length-1; i != j; ) {
+			
+			if((arrToSort[i] > arrToSort[pivot]) && (arrToSort[j] < arrToSort[pivot])) {
+				swap(arrToSort, i, j);
+				i++;
+				j--;
+			}
+		}
 		
 		return arrToSort;
 	}
