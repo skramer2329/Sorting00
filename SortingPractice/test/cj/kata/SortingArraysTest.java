@@ -40,11 +40,13 @@ public class SortingArraysTest extends TestCase {
 		}
 	}
 	
-	public void createArray(int[] arr) {
+	public int[] createArray(int[] arr) {
 		
 		for(int i = 0; i < 50; i++) {
-			arr7[i] = i+1;
+			arr[i] = i+1;
 		}
+		
+		return arr;
 	}
 
 	// Tests BubbleSort
@@ -116,7 +118,7 @@ public class SortingArraysTest extends TestCase {
 	}
 	
 	public void test26() {
-		int arr[] = sorter.quickSort(arr7, 0, arr7.length-1);
+		int arr[] = sorter.quickSort(createArray(arr7), 0, arr7.length-1);
 		testIsSorted(arr);
 	}
 	
