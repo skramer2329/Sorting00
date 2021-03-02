@@ -53,44 +53,33 @@ public class SortingArrays {
 	}
 
 	// helper method for quickSort:
-	public int getRandomPivot(int firstIndex, int lastIndex) {
+	public int getRandomPivot(int[] arr, int firstIndex, int lastIndex) {
 
 		int randomPivot = (int) (Math.random() * lastIndex) + 1;
+
+		swap(arr, 0, randomPivot);
+
+		// set index of pivot to last index
+		randomPivot = 0;
 		return randomPivot;
 	}
 
 	// helper method for quicksort:
-	// should return the pivot index and the pivot should be in correct place
 	public int partition(int[] arr, int startIndex, int endIndex) {
 
-		int pivot = endIndex;
-		int i, j;
-
-		for (i = startIndex, j = endIndex - 1; i < j;) {
-
-			while (arr[i] < arr[pivot])
+		int pivot = startIndex;
+		int i,j;
+		
+		for(i = pivot+1, j = endIndex; i<j;) {
+			while(arr[i] < arr[pivot])
 				i++;
-			
-			while (arr[j] > arr[pivot])
+			while(arr[j] > arr[pivot])
 				j--;
-			// else swap values
-//			if (arr[i] > arr[pivot] && arr[j] < arr[pivot]) {
-//				swap(arr, i, j);
-//				++i;
-//				--j;
-//			}
-			swap(arr, i, pivot);
-			pivot = i;
 			
+			swap(arr, j, pivot);
 		}
-
-		// after this for loop finishes, i should be equal to j
-		// then we swap the lower index with the pivot
-		//swap(arr, startIndex, pivot);
-
-		// will the actual pivot return? we only swapped values in swap method, we
-		// didn't swap the indexes.
-		//pivot = startIndex;
+		pivot = j;
+		
 		return pivot;
 	}
 
@@ -102,30 +91,19 @@ public class SortingArrays {
 		if (arrToSort == null)
 			return null;
 
-		// Base case:
-		if (arrToSort.length == 1)
-			return arrToSort;
+		// I think this conditional is incorrect
+		if (startIndex < lastIndex+1) {
 
-		// gets random index for pivot
-		int pivot = getRandomPivot(0, arrToSort.length - 1);
+			// pivot is now in it's correct place after calling partition
+			int pivotCorrect = partition(arrToSort, getRandomPivot(arrToSort, startIndex, lastIndex), lastIndex);
 
-		// places value of pivot at last index; not sure if this is totally necessary
-		// tbh. Seems to make sorting easier
-		swap(arrToSort, arrToSort.length - 1, pivot);
+			// left partition:
+			quickSort(arrToSort, 0, pivotCorrect - 1);
 
-		// set index of pivot to last index
-		pivot = arrToSort.length - 1;
-
-		// pivot is now in it's correct place after calling partition
-		int pivotCorrect = partition(arrToSort, 0, pivot);
-
-
-		// left partition:
-		//quickSort(arrToSort, 0, pivotCorrect - 1);
-
-		// right partition:
-		//quickSort(arrToSort, pivotCorrect + 1, arrToSort.length - 1);
-
+			// right partition:
+			quickSort(arrToSort, pivotCorrect + 1, lastIndex-1);
+		}
+		
 		return arrToSort;
 	}
 

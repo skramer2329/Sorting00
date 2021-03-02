@@ -86,27 +86,27 @@ public class SortingArraysTest extends TestCase {
 
 	// Tests QuickSort
 	public void test20() {
-		int arr[] = sorter.quickSort(arr1, 0, arr1.length);
+		int arr[] = sorter.quickSort(arr1, 0, arr1.length-1);
 		testIsSorted(arr);
 	}
 	
 	public void test21() {
-		int arr[] = sorter.quickSort(arr2, 0, arr2.length);
+		int arr[] = sorter.quickSort(arr2, 0, arr2.length-1);
 		testIsSorted(arr);
 	}
 	
 	public void test22() {
-		int arr[] = sorter.quickSort(arr3, 0, arr3.length);
+		int arr[] = sorter.quickSort(arr3, 0, arr3.length-1);
 		testIsSorted(arr);
 	}
 	
 	public void test23() {
-		int arr[] = sorter.quickSort(arr4, 0, arr6.length);
+		int arr[] = sorter.quickSort(arr4, 0, arr6.length-1);
 		testIsSorted(arr);
 	}
 	
 	public void test24() {
-		int arr[] = sorter.quickSort(arr5, 0, arr5.length);
+		int arr[] = sorter.quickSort(arr5, 0, arr5.length-1);
 		testIsSorted(arr);
 	}
 	
@@ -116,7 +116,7 @@ public class SortingArraysTest extends TestCase {
 	}
 	
 	public void test26() {
-		int arr[] = sorter.quickSort(arr7, 0, arr7.length);
+		int arr[] = sorter.quickSort(arr7, 0, arr7.length-1);
 		testIsSorted(arr);
 	}
 	
