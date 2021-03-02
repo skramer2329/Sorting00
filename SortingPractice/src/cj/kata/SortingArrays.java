@@ -68,18 +68,22 @@ public class SortingArrays {
 	public int partition(int[] arr, int startIndex, int endIndex) {
 
 		int pivot = startIndex;
-		int i,j;
-		
-		for(i = pivot+1, j = endIndex; i<j;) {
-			while(arr[i] < arr[pivot])
+		int i, j;
+
+		for (i = pivot + 1, j = endIndex; i < j;) {
+			while (arr[i] < arr[pivot])
 				i++;
-			while(arr[j] > arr[pivot])
+			while (arr[j] > arr[pivot])
 				j--;
-			
-			swap(arr, j, pivot);
+			if (i > j) {
+				swap(arr, i-1, pivot);
+			} else {
+
+				swap(arr, j, i);
+			}
 		}
 		pivot = j;
-		
+
 		return pivot;
 	}
 
@@ -92,7 +96,7 @@ public class SortingArrays {
 			return null;
 
 		// I think this conditional is incorrect
-		if (startIndex < lastIndex+1) {
+		if (startIndex < lastIndex + 1) {
 
 			// pivot is now in it's correct place after calling partition
 			int pivotCorrect = partition(arrToSort, getRandomPivot(arrToSort, startIndex, lastIndex), lastIndex);
@@ -101,9 +105,9 @@ public class SortingArrays {
 			quickSort(arrToSort, 0, pivotCorrect - 1);
 
 			// right partition:
-			quickSort(arrToSort, pivotCorrect + 1, lastIndex-1);
+			quickSort(arrToSort, pivotCorrect + 1, lastIndex - 1);
 		}
-		
+
 		return arrToSort;
 	}
 
