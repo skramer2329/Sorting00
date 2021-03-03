@@ -103,7 +103,7 @@ public class SortingArraysTest extends TestCase {
 	}
 	
 	public void test23() {
-		int arr[] = sorter.quickSort(arr4, 0, arr6.length-1);
+		int arr[] = sorter.quickSort(arr4, 0, arr4.length-1);
 		testIsSorted(arr);
 	}
 	
